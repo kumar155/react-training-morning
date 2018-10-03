@@ -9,11 +9,12 @@ import { Title, List } from './HomePage';
 import UserComponent from './UserComponent';
 import { Test } from './ParentComponent';
 import LifeCycle from './lifecycle';
+import WrapperComponent from './wrappercomponent';
 
 ReactDOM.render(
     <Router>
       <Switch>
-        <Route exact path="/" component={Title} />
+        <Route exact path="/" component={WrapperComponent} />
         <Route path="/list" component={List} />
         <Route path="/users" component={UserComponent} />
         <Route path="/test" component={Test} />
