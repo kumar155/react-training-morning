@@ -9,18 +9,17 @@ import { Title, List } from './HomePage';
 import UserComponent from './UserComponent';
 import { Test } from './ParentComponent';
 import LifeCycle from './lifecycle';
-import WrapperComponent from './wrappercomponent';
+import configureStore from './store';
+import { Provider } from 'react-redux';
+import Root from './root';
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+
+import rootReducer from './reduers/rootReducer';
+
 
 ReactDOM.render(
-    <Router>
-      <Switch>
-        <Route exact path="/" component={WrapperComponent} />
-        <Route path="/list" component={List} />
-        <Route path="/users" component={UserComponent} />
-        <Route path="/test" component={Test} />
-        <Route path="/lifecycle" component={LifeCycle}/>
-        <Route path="*" component={Title}/>
-      </Switch>
-  </Router>,
-  document.getElementById('root'));
+  <Root store={configureStore()} />,
+  document.getElementById('root')
+);
 registerServiceWorker();

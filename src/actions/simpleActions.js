@@ -1,5 +1,5 @@
+export const INCREMENT_ACTION = 'INCREMENT_ACTION';
 
-export const IncrementAction = (presentCount) => ({
-    type:'INCREMENT_ACTION',
-    payload: presentCount,
+export const IncrementAction = () => ({
+    type: INCREMENT_ACTION,
 });

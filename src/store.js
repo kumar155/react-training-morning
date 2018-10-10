@@ -1,8 +1,12 @@
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 
-import rootReducer from './reducers/rootReducer';
+import rootReducer from './reduers/rootReducer';
 
 export default function configureStore(initialState={}) {
- return createStore(rootReducer);
+    return createStore(
+        rootReducer, 
+        applyMiddleware(logger),
+    );
 };
